@@ -1,31 +1,29 @@
-""" Edit files to track flesh color, rind color, and average weight of melons. Output should look something like:
-
-CASABA
-  seedless: False
-  price: 2.5
-  flesh_color: None
-  weight: None
-  rind_color: None
-Refactor melons.py and melon_info.py to make it easier to add more things to track in the future.
-
-Hint 1: You can change the format of the melons.py file
-
-Hint 2: Try combining data into one big dictionary
-
-Hint 3: With melon name as the key and a dictionary containing melon info as the value
-
-"""
-
-
 def melon_inventory(melon_name, price, seedless,
                     flesh_color, weight, rind_color):
-    """
+
+    """Prints a dictionary with melon information.
+
+    Initializes with empty dictionary 'melons_in_stock'. Sets the melon_name
+    input as a key in melons_in_stock, and the other info is stored in a
+    dictionary as the value to melon_name.
+
+    Each successive melon_name is added as a new key with new dictionary to
+    the melons_in_stock dictionary
+
+    For example::
+
+    >>> melon_inventory('Cantaloupe', 3, True, 'orange', 3.5, 'tan')
+    {'Cantaloupe': {'seedless': True, 'price': 3.0, 'flesh_color': 'orange',
+     'weight': 3.5, 'rind_color': 'tan'}
+
+
+
 
     """
 
-    melons = {}
+    melons_in_stock = {}
 
-    melons[melon_name] = {
+    melons_in_stock[melon_name] = {
 
         'price': float(price),
         'seedless': seedless,
@@ -35,8 +33,8 @@ def melon_inventory(melon_name, price, seedless,
 
     }
 
-    print melons
+    print melons_in_stock
 
-melon_inventory('Watermelon', 5, False, 'red', 10, 'green')
+# melon_inventory('Cantaloupe', 3, True, 'orange', 3.5, 'tan')
 
-melon_inventory('Cantaloupe', 3, True, 'orange', 3.5, 'tan')
+# melon_inventory('Watermelon', 5, False, 'red', 7, 'green')
